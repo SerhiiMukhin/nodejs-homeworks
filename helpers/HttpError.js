@@ -5,11 +5,12 @@ const messages = {
     404: "Not Found",
     409: "Conflict"
 }
-
-const HttpError = (status, message = messages[status]) => {
-    const error = new Error(message);
-    error.status = status;
-    return error;
-}
+class HttpError extends Error {
+    constructor(status, message = messages[status]) {
+      super(message);
+      this.name = "HttpError";
+      this.status = status;
+    }
+  }
 
 module.exports = HttpError;
