@@ -1,9 +1,11 @@
-const validateBody = require('./validateBody')
-const isValidId = require("./isValidId")
-const schemas = require('./JoiSchemas')
+const validateBody = require('./validateBody');
+const isValidId = require('./isValidId');
+const contactSchemas = require('./contactSchemas');
+const userSchemas = require('./userSchemas');
 
 module.exports = {
-    validateBody,
-    isValidId,
-    schemas,
-}
+  validateBody,
+  isValidId,
+  contactSchemas,
+  userSchemas,
+};
