@@ -10,6 +10,10 @@ router.post('/login', validateBody(userSchemas.loginSchema), userController.logi
 router.get('/current', authenticate, userController.getCurrent);
 router.post('/logout', authenticate, userController.logout);
 
+router.get('/verify/:verificationToken', userController.verifyEmail);
+
+router.post('/verify', userController.resendVerifyEmail);
+
 router.patch('/avatars', authenticate, upload.single('avatar'), userController.changeAvatar);
 
 module.exports = router;
